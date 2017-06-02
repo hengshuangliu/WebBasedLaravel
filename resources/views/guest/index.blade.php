@@ -21,6 +21,9 @@
                             <table class="table table-striped task-table">
                                 <thead>
                                     <th>Menu</th>
+                                    <th>price</th>
+                                    <th>describe</th>
+                                    <th>pic</th>
                                     <th>&nbsp;</th>
                                 </thead>
                                 <tbody>
@@ -29,14 +32,14 @@
                                             <td class="table-text"><div>{{ $dish->name }}</div></td>
                                             <td class="table-text"><div>{{ $dish->price }}</div></td>
                                             <td class="table-text"><div>{{ $dish->description }}</div></td>
-                                            <td class="table-img"><div><img src={{asset('uploads/'.($dish->id).'.jpg')}}  alt="图片加载失败" width="200" height="200" /></div></td>
+                                            <td class="table-img"><div><img src={{asset('uploads/'.($dish->id).'.jpg')}}  alt="图片加载失败" width="150" height="150" /></div></td>
                                             <!-- Dish Add Button -->
                                             <td>
                                                 <form action="/guest/create/{{$dish->id}}/{{$order ->id}}" method="POST">
                                                 {{ csrf_field() }}
                                                 <!-- {{ method_field('DELETE') }} -->
                                                 <button type="submit" id="delete-dish-{{ $dish->id }}" class="btn btn-danger">
-                                                    <i class="fa fa-btn fa-trash"></i>Add
+                                                    <i class=""></i>Add
                                                 </button>
                                                 </form>
                                             </td>
@@ -59,6 +62,8 @@
                         <table class="table table-striped task-table">
                             <thead>
                                 <th>Dish</th>
+                                <th>price</th>
+                                <th>num</th>
                                 <th>&nbsp;</th>
                             </thead>
                             <tbody>
@@ -96,11 +101,11 @@
                             <label for="dish-name" class="col-sm-3 control-label">Remark</label>
 
                             <div class="col-sm-6">
-                                <input type="text" name="remark" id="remark" class="form-control" value="填写备注">
+                                <input type="text" name="remark" id="remark" class="form-control" placeholder="填写备注">
                             </div>
                             </div>
                             <button type="submit" id="delete-dish-{{ $order->id }}" class="btn btn-danger">
-                                <i class="fa fa-btn fa-trash"></i>Confirm Order
+                                <i class=""></i>Confirm Order
                             </button>
                         </form>
                         @else

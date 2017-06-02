@@ -96,7 +96,7 @@
 												<!-- {{ method_field('DELETE') }} -->
 
 												<button type="submit" id="delete-dish-{{ $dish->id }}" class="btn btn-danger">
-													<i class="fa fa-btn fa-trash"></i>Delete
+													<i></i>Delete
 												</button>
 											</form>
 											</td>
@@ -106,7 +106,7 @@
 												<!-- {{ method_field('DELETE') }} -->
 
 												<button type="submit" id="modify-dish-{{ $dish->id }}" class="btn btn-danger">
-													<i class="fa fa-btn fa-trash"></i>进行修改
+													<i ></i>edit
 												</button>
 											</form>
 										</td>
