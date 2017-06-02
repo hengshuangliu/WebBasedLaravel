@@ -29,15 +29,15 @@
                         <div class="form-group">
                             <div class="form-field form-field--icon">
                             <i class="icon icon-user"></i>
-                                <input type="text" name="password" placeholder="password" class="form-control">
+                                <input type="password" name="password" placeholder="password" class="form-control">
                             </div>
                         </div>
 
                         <!-- Remember Me -->
-                        <div class="form-group">
-                            <input type="checkbox" value="1"  name="auto_login" id="autologin" class="f-check ui-checkbox" />
+<!--                         <div class="form-group">
+                            <input type="checkbox" value="1"  name="remember" id="remember" class="f-check ui-checkbox" />
                             <label class="normal" for="autologin">Remember Me</label>
-                        </div>
+                        </div> -->
 
                         <!-- Forget Password -->
                         <div class="form-group">

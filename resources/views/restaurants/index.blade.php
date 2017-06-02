@@ -72,6 +72,7 @@
 								@foreach ($restaurants as $restaurant)
 									<tr>
 										<td class="table-text"><div>{{ $restaurant->name }}</div></td>
+										<td class="table-text"><div>ID:{{ $restaurant->id }}</div></td>
 										<td class="table-text"><div><a href="/dishes/{{ $restaurant->id }}"> dishes </a></div></td>
 										<td class="table-text"><div><a href="/tables/{{ $restaurant->id }}"> tables </a></div></td>
 										<td class="table-text"><div><a href="/orders/{{ $restaurant->id }}"> orders </a></div></td>

@@ -63,6 +63,7 @@
 								@foreach ($tables as $table)
 									<tr>
 										<td class="table-text"><div>{{ $table->alias }}</div></td>
+										<td class="table-text"><div>ID:{{ $table->id }}</div></td>
 
 										<!-- Table Delete Button -->
 										<td>
