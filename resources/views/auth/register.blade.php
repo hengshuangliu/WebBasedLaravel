@@ -16,7 +16,7 @@
 
                         <!-- Name -->
                         <div class="form-group">
-                            <label for="name" class="col-sm-3 control-label">Name</label>
+                            <label for="name" class="col-sm-3 control-label">姓名</label>
 
                             <div class="col-sm-6">
                                 <input type="text" name="name" class="form-control" value="{{ old('name') }}">
@@ -25,7 +25,7 @@
 
                         <!-- E-Mail Address -->
                         <div class="form-group">
-                            <label for="email" class="col-sm-3 control-label">E-Mail</label>
+                            <label for="email" class="col-sm-3 control-label">用户名/邮箱</label>
 
                             <div class="col-sm-6">
                                 <input type="email" name="email" class="form-control" value="{{ old('email') }}">
@@ -34,7 +34,7 @@
 
                         <!-- Telephone -->
                         <div class="form-group">
-                            <label for="telephone" class="col-sm-3 control-label">Telephone</label>
+                            <label for="telephone" class="col-sm-3 control-label">电话</label>
 
                             <div class="col-sm-6">
                                 <input type="text" name="telephone" class="form-control" value="{{ old('telephone') }}">
@@ -43,7 +43,7 @@
 
                         <!-- Password -->
                         <div class="form-group">
-                            <label for="password" class="col-sm-3 control-label">Password</label>
+                            <label for="password" class="col-sm-3 control-label">密码</label>
 
                             <div class="col-sm-6">
                                 <input type="password" name="password" class="form-control">
@@ -52,7 +52,7 @@
 
                         <!-- Confirm Password -->
                         <div class="form-group">
-                            <label for="password_confirmation" class="col-sm-3 control-label">Confirm Password</label>
+                            <label for="password_confirmation" class="col-sm-3 control-label">确认密码</label>
 
                             <div class="col-sm-6">
                                 <input type="password" name="password_confirmation" class="form-control">
@@ -63,7 +63,7 @@
                         <div class="form-group">
                             <div class="col-sm-offset-3 col-sm-6">
                                 <button type="submit" class="btn btn-default">
-                                    <i class="fa fa-btn fa-sign-in"></i>Register
+                                    <i class="fa fa-btn fa-sign-in"></i>注册
                                 </button>
                             </div>
                         </div>

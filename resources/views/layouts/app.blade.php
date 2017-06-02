@@ -37,51 +37,37 @@
 </head>
 
 <body>
-	<div style="text-align:center;color:#000;font-size:30px;font-style:Verdana;font-weight: 800;">
-		<h class="content">NFC SMART SYSTERM</h>
-	</div>
-	<div class="container">
-		<nav class="navbar cf "  data-mod="lz" data-mod-deepview="1">
-			<div class="container-fluid">
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-						<span class="sr-only">Toggle navigation</span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-
-					<a class="navbar-brand" href="/restaurants">Restaurant</a>
-					<a class="navbar-brand" href="/guest/1/1">TestOrder</a>
-				</div>
-
-				<div id="navbar" class="navbar-collapse collapse">
-					<ul class="nav navbar-nav">
-						&nbsp;
-					</ul>
-
-					<ul class="nav navbar-nav navbar-right">
-						@if (Auth::guest())
-							<li><a href="/auth/register"><i class="fa fa-btn fa-heart"></i>Register</a></li>
-							<li><a href="/auth/login"><i class="fa fa-btn fa-sign-in"></i>Login</a></li>
-						@else
-							<li class="navbar-text"><i class="fa fa-btn fa-user"></i>{{ Auth::user()->name }}</li>
-							<li><a href="/auth/logout"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
-						@endif
-					</ul>
-				</div>
+	<div class="row clearfix" style="background-color:#ff5511;color:#fff;">
+		<div class="col-md-12 column">
+			<div class="page-header" >
+				<h3>
+					智能点餐平台
+				</h3>
 			</div>
-		</nav>
+		</div>
 	</div>
+	<div class="row clearfix">
+			<ul class="breadcrumb" >
+				<li style="magin-right:50%">
+					 <a href="/restaurants" style="color:#000"><i class="fa fa-btn fa-heart" style="color:#000"></i >我的餐厅</a>
+				</li>
+				@if (Auth::guest())
+					<li><a href="/auth/login" style="color:#000">登陆</a></li>
+					<li><a href="/auth/register" style="color:#000">注册</a></li>
+				@else
+					<li style="color:#000">{{ Auth::user()->name }}</li>
+					<li><a href="/auth/logout" style="color:#000">退出登陆</a></li>
+				@endif
+			</ul>
+	</div>
+
 
 	@yield('content')
 
-	<div class="div-inline" style="margin-top:50px">
-        <ul>
-            <a style="margin-left:50px" rel="nofollow" >about us</a>
-            <a style="margin-left:50px" rel="nofollow" >join us</a>
-            <a style="margin-left:50px" rel="nofollow" >information</a>
-        </ul>
-    </div>
+    <div class="row clearfix" style="background-color:#ff5511;color:#fff">
+		<div class="col-md-12 column">
+			 <address> <strong>湖北省武汉市珞喻路152号 华中师范大学9号教学楼 物理科学与技术学院 9232实验室 邮编：430079</strong><br> design by good good study<br /> <abbr title="Phone">P:</abbr>NO.152 Luoyu Road, Wuhan, Hubei, P.R.China 430079</address>
+		</div>
+	</div>
 </body>
 </html>
