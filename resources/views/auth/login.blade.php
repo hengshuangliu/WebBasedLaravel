@@ -39,6 +39,11 @@
                             <label class="normal" for="autologin">Remember Me</label>
                         </div>
 
+                        <!-- Forget Password -->
+                        <div class="form-group">
+                            <label class="normal" ><a href="/password/email">忘记密码</a></label>
+                        </div>
+
                         <!-- Login Button -->
                         <div class="form-group">
                             <div "form-field form-field--ops">
