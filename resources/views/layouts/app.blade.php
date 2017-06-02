@@ -29,18 +29,14 @@
 		}
 	</style>
 
-	<script>
-		(function () {
-			$('#task-name').focus();
-		}());
-	</script>
 </head>
 
 <body>
+
+	<div class="container">
 	<div style="text-align:center;color:#000;font-size:30px;font-style:Verdana;font-weight: 800;">
 		<h class="content">NFC SMART SYSTERM</h>
 	</div>
-	<div class="container">
 		<nav class="navbar cf "  data-mod="lz" data-mod-deepview="1">
 			<div class="container-fluid">
 				<div class="navbar-header">
@@ -76,6 +72,7 @@
 
 	@yield('content')
 
+<div class="container">
 	<div class="div-inline" style="margin-top:50px">
         <ul>
             <a style="margin-left:50px" rel="nofollow" >about us</a>
@@ -83,5 +80,6 @@
             <a style="margin-left:50px" rel="nofollow" >information</a>
         </ul>
     </div>
+   </div>
 </body>
 </html>
