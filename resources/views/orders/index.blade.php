@@ -94,7 +94,7 @@
                                             <td>
                                                 <form action="/order/modify/{{$order->id}}" method="POST">
                                                 {{ csrf_field() }}
-                                                <button type="submit" id="delete-dish-{{ $order->id }}" class="btn btn-danger">
+                                                <button type="submit" id="" class="btn btn-danger">
                                                     <i class="fa fa-btn fa-trash"></i>Delete
                                                 </button>
                                                 </form>
