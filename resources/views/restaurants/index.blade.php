@@ -36,7 +36,7 @@
 							</div>
 							<div class="col-md-4 column">
 								<div class="btn-group">
-									 <button class="btn btn-default">修改餐厅信息</button> <button data-toggle="dropdown" class="btn btn-default dropdown-toggle"><span class="caret"></span></button>
+									 <button class="btn btn-default">餐厅信息</button> <button data-toggle="dropdown" class="btn btn-default dropdown-toggle"><span class="caret"></span></button>
 									<ul class="dropdown-menu">
 										<li>
 											 <div><a style="color:#000" href="/dishes/{{ $restaurant->id }}"> 修改菜单 </a>
