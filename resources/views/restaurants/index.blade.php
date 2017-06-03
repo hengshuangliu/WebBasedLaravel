@@ -17,16 +17,16 @@
 						 <input type="text" name="address" id="restaurant-address" class="form-control" value="{{ old('address') }}">
 						 <label>商业许可证号</label>
 						 <input type="text" name="businessLicense" id="restaurant-businessLicense" class="form-control" value="{{ old('businessLicense') }}">
-						 <button type="submit" class="btn" style="margin-top:5%">提交</button>
+						 <button type="submit" class="btn btn-default" style="margin-top:5%">添加店铺</button>
 					</fieldset>
 				</form>
 			</div>
 
 			<!-- Current Restaurant -->
 			@if (count($restaurants) > 0)
-				<div  style="margin-top:10%;font-size: 200%">
+				<legend  style="margin-top:10%;font-size: 200%">
 					我的餐厅
-				</div>
+				</legend>
 				@foreach ($restaurants as $restaurant)
 				<div class="row clearfix" style="margin-top:5%">
 					<div class="col-md-12 column">
@@ -70,5 +70,6 @@
 			@endif
 
 		</div>
+	</div>
 	</div>
 @endsection

@@ -1,8 +1,4 @@
-@extends('layouts.app')
-
-@section('content')
-	<div class="container">
-		<div class="row-fluid">
+<div class="row-fluid">
 		<!-- Add Restaurant -->
 			<div class="span6">
 				<!-- Display Validation Errors -->
@@ -34,22 +30,12 @@
 					<div class="col-md-12 column">
 						<div class="row clearfix">
 							<div class="col-md-3 column">
-								 <div class="div div-default">菜名：{{ $dish->name }}</div>
-								 <div class="div div-default">价格：{{ $dish->price }}元</div>
-								 <div class="div div-default">描述：{{ $dish->description }}</div>
+								 <div class="div div-default">{{ $dish->name }}</div>
+								 <div class="div div-default">{{ $dish->price }}</div>
+								 <div class="div div-default">{{ $dish->description }}</div>
 							</div>
 							<div class="col-md-3 column">
-								 <div style="margin-bottom:10%;"><img src={{asset('uploads/'.($dish->id).'.jpg')}}  alt="图片加载失败" width="200" height="200" /></div>
-							</div>
-							<div class="col-md-3 column">
-								<form action="/dish/modify/index/{{ $dish->id }}" method="POST">
-									{{ csrf_field() }}
-									<!-- {{ method_field('DELETE') }} -->
-
-									<button type="submit" id="modify-dish-{{ $dish->id }}" class="btn btn-danger">
-										<i ></i>修改菜品信息
-									</button>
-								</form>
+								 <div><img src={{asset('uploads/'.($dish->id).'.jpg')}}  alt="图片加载失败" width="200" height="200" /></div>
 							</div>
 							<div class="col-md-3 column">
 								<form action="/dish/delete/{{ $dish->id }}" method="POST">
@@ -57,7 +43,17 @@
 									<!-- {{ method_field('DELETE') }} -->
 
 									<button type="submit" id="delete-dish-{{ $dish->id }}" class="btn btn-danger">
-										<i></i>删除菜品
+										<i></i>Delete
+									</button>
+								</form>
+							</div>
+							<div class="col-md-3 column">
+								<form action="/dish/modify/index/{{ $dish->id }}" method="POST">
+									{{ csrf_field() }}
+									<!-- {{ method_field('DELETE') }} -->
+
+									<button type="submit" id="modify-dish-{{ $dish->id }}" class="btn btn-danger">
+										<i ></i>edit
 									</button>
 								</form>
 							</div>
@@ -69,5 +65,3 @@
 
 		</div>
 	</div>
-	</div>
-@endsection
