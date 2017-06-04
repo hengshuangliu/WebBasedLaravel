@@ -3,26 +3,7 @@
 @section('content')
 	<div class="container">
 		<div class="row-fluid">
-		<!-- Add Restaurant -->
-			<div class="span6">
-				<!-- Display Validation Errors -->
-					@include('common.errors')
-				<form action="/restaurant" method="POST">
-					{{ csrf_field() }}
-					<fieldset>
-						 <legend>添加店铺</legend>
-						 <label>餐厅名称</label>
-						 <input type="text" name="name" id="restaurant-name" class="form-control" value="{{ old('restaurant') }}">
-						 <label>地址</label>
-						 <input type="text" name="address" id="restaurant-address" class="form-control" value="{{ old('address') }}">
-						 <label>商业许可证号</label>
-						 <input type="text" name="businessLicense" id="restaurant-businessLicense" class="form-control" value="{{ old('businessLicense') }}">
-						 <button type="submit" class="btn btn-default" style="margin-top:5%">添加店铺</button>
-					</fieldset>
-				</form>
-			</div>
-
-			<!-- Current Restaurant -->
+		<!-- Current Restaurant -->
 			@if (count($restaurants) > 0)
 				<legend  style="margin-top:10%;font-size: 200%">
 					我的餐厅
@@ -68,6 +49,27 @@
 				</div>
 				@endforeach
 			@endif
+
+		<!-- Add Restaurant -->
+			<div class="span6">
+				<!-- Display Validation Errors -->
+					@include('common.errors')
+				<form action="/restaurant" method="POST">
+					{{ csrf_field() }}
+					<fieldset>
+						 <legend>添加店铺</legend>
+						 <label>餐厅名称</label>
+						 <input type="text" name="name" id="restaurant-name" class="form-control" value="{{ old('restaurant') }}">
+						 <label>地址</label>
+						 <input type="text" name="address" id="restaurant-address" class="form-control" value="{{ old('address') }}">
+						 <label>商业许可证号</label>
+						 <input type="text" name="businessLicense" id="restaurant-businessLicense" class="form-control" value="{{ old('businessLicense') }}">
+						 <button type="submit" class="btn btn-default" style="margin-top:5%;margin-bottom:5%">添加店铺</button>
+					</fieldset>
+				</form>
+			</div>
+
+
 
 		</div>
 	</div>

@@ -40,7 +40,7 @@
 	<div class="row clearfix" style="background-color:#ff5511;color:#fff;">
 		<div class="col-md-12 column">
 			<div class="page-header" >
-				<h3>
+				<h3 style="text-align: center;">
 					智能点餐平台
 				</h3>
 			</div>
@@ -65,9 +65,7 @@
 	@yield('content')
 
     <div class="row clearfix" style="background-color:#ff5511;color:#fff">
-		<div class="col-md-12 column">
-			 <address> <strong>湖北省武汉市珞喻路152号 华中师范大学9号教学楼 物理科学与技术学院 9232实验室 邮编：430079</strong><br> design by good good study<br /> <abbr title="Phone">P:</abbr>NO.152 Luoyu Road, Wuhan, Hubei, P.R.China 430079</address>
-		</div>
+			 <div style="color:#C0C0C0;position:fixed;left:10;bottom:0">Copyright © 2017 - 2017 CCNU.elac All Rights Reserved</div>
 	</div>
 </body>
 </html>
