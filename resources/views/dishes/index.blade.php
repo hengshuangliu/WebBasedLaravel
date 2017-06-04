@@ -46,8 +46,8 @@
 									{{ csrf_field() }}
 									<!-- {{ method_field('DELETE') }} -->
 
-									<button type="submit" id="modify-dish-{{ $dish->id }}" class="btn btn-danger">
-										<i ></i>修改菜品信息
+									<button type="submit" id="modify-dish-{{ $dish->id }}">
+										<i ></i>修改
 									</button>
 								</form>
 							</div>
@@ -56,8 +56,8 @@
 									{{ csrf_field() }}
 									<!-- {{ method_field('DELETE') }} -->
 
-									<button type="submit" id="delete-dish-{{ $dish->id }}" class="btn btn-danger">
-										<i></i>删除菜品
+									<button type="submit" id="delete-dish-{{ $dish->id }}">
+										<i class="fa fa-btn fa-trash"></i>删除
 									</button>
 								</form>
 							</div>
