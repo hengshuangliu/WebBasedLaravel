@@ -71,7 +71,7 @@
 												{{ csrf_field() }}
 												<!-- {{ method_field('DELETE') }} -->
 
-												<button type="submit" id="delete-table-{{ $table->id }}" class="btn btn-danger">
+												<button type="submit" id="delete-table-{{ $table->id }}" class="btn btn-default">
 													<i class="fa fa-btn fa-trash"></i>删除桌位
 												</button>
 											</form>

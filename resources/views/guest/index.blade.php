@@ -30,7 +30,7 @@
                         <form action="/guest/create/{{$dish->id}}/{{$order ->id}}" method="POST">
                             {{ csrf_field() }}
                             <!-- {{ method_field('DELETE') }} -->
-                            <button type="submit" id="delete-dish-{{ $dish->id }}" class="btn btn-danger">
+                            <button type="submit" id="delete-dish-{{ $dish->id }}" class="btn btn-default">
                                 <i class=""></i>点单
                             </button>
                         </form>
@@ -70,7 +70,7 @@
                             {{ csrf_field() }}
                             <!-- {{ method_field('DELETE') }} -->
 
-                            <button type="submit" id="delete-dish-{{ $ordersDishes[$i]->id }}" class="btn btn-danger">
+                            <button type="submit" id="delete-dish-{{ $ordersDishes[$i]->id }}" class="btn btn-default">
                                 <i class="fa fa-btn fa-trash"></i>删除菜品
                             </button>
                         </form>
@@ -96,7 +96,7 @@
                             <input style="margin-bottom:5%" type="text" name="remark" id="remark" class="form-control" placeholder="填写备注">
                         </div>
                         <div class="col-sm-4">
-                        <button type="submit" id="delete-dish-{{ $order->id }}" class="btn btn-danger">
+                        <button type="submit" id="delete-dish-{{ $order->id }}" class="btn btn-default">
                             <i class=""></i>确认下单
                         </button>
                         </div>

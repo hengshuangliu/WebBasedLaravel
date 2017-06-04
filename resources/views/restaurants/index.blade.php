@@ -39,8 +39,8 @@
 									{{ csrf_field() }}
 									{{ method_field('DELETE') }}
 
-									<button style="margin-left:30%;margin-bottom:10%;" type="submit" id="delete-restaurant-{{ $restaurant->id }}" >
-										<i class="fa fa-btn fa-trash"></i>删除
+									<button style="margin-left:30%;margin-bottom:10%;" class="btn btn-default" type="submit" id="delete-restaurant-{{ $restaurant->id }}" >
+										<i class="fa fa-btn fa-trash" ></i>删除
 									</button>
 								</form>
 							</div>

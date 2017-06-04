@@ -46,7 +46,7 @@
 									{{ csrf_field() }}
 									<!-- {{ method_field('DELETE') }} -->
 
-									<button type="submit" id="modify-dish-{{ $dish->id }}">
+									<button type="submit" id="modify-dish-{{ $dish->id }}" class="btn btn-default">
 										<i ></i>修改
 									</button>
 								</form>
@@ -56,7 +56,7 @@
 									{{ csrf_field() }}
 									<!-- {{ method_field('DELETE') }} -->
 
-									<button type="submit" id="delete-dish-{{ $dish->id }}">
+									<button type="submit" id="delete-dish-{{ $dish->id }}" class="btn btn-default">
 										<i class="fa fa-btn fa-trash"></i>删除
 									</button>
 								</form>

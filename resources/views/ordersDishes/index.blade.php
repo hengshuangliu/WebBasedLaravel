@@ -32,7 +32,7 @@
                                             <td>
                                                 <form action="/orderDish/{{$ordersDishesTemp[$i]->id}}" method="POST">
                                                 {{ csrf_field() }}
-                                                <button type="submit" id="delete-dish-{{ $ordersDishesTemp[$i]->id }}" class="btn btn-danger">
+                                                <button type="submit" id="delete-dish-{{ $ordersDishesTemp[$i]->id }}" class="btn btn-default">
                                                     <i></i>准备制作
                                                 </button>
                                                 </form>
@@ -58,7 +58,7 @@
                                             <td>
                                                 <form action="/orderDish/{{$ordersDishesTemp[$i]->id}}" method="POST">
                                                 {{ csrf_field() }}
-                                                <button type="submit" id="delete-dish-{{ $ordersDishesTemp[$i]->id }}" class="btn btn-danger">
+                                                <button type="submit" id="delete-dish-{{ $ordersDishesTemp[$i]->id }}" class="btn btn-default">
                                                     <i></i>制作完成
                                                 </button>
                                                 </form>
