@@ -6,7 +6,7 @@
         <div class="row clearfix">
             <div class="col-md-12 column">
                 <div class="promotion-banner">
-                     <img src="//s0.meituan.net/bs/file/?f&#x3D;fe-sso-fs:build/page/static/banner/www.jpg" width=100% height="40%"/>
+                     <img src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=139232850,596941672&amp;fm=23&amp;gp=0.jpg" width=100% height="40%"/>
                 </div>
         </div>
 
