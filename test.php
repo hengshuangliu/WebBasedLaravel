@@ -1,65 +1,41 @@
-<!-- Current Dish -->
-            @if(count($ordersDishes)>0)
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        Current Dishes for {{$restaurant->name}} in {{$table->alias}}
-                    </div>
+@if (count($dishes) > 0)
+				<legend  style="margin-top:10%;font-size: 200%">
+					菜单
+				</legend>
+				@foreach ($dishes as $dish)
+				<div class="row clearfix" style="margin-top:5%">
+					<div class="col-md-12 column">
+						<div class="row clearfix">
+							<div class="col-md-3 column">
+								 <div class="div div-default">菜名：{{ $dish->name }}</div>
+								 <div class="div div-default">价格：{{ $dish->price }}元</div>
+								 <div class="div div-default">描述：{{ $dish->description }}</div>
+							</div>
+							<div class="col-md-3 column">
+								 <div style="margin-bottom:10%;"><img src={{asset('uploads/'.($dish->id).'.jpg')}}  alt="图片加载失败" width="200" height="200" /></div>
+							</div>
+							<div class="col-md-3 column">
+								<form action="/dish/modify/index/{{ $dish->id }}" method="POST">
+									{{ csrf_field() }}
+									<!-- {{ method_field('DELETE') }} -->
 
-                    <div class="panel-body">
-                        <table class="table table-striped task-table">
-                            <thead>
-                                <th>Dish</th>
-                                <th>price</th>
-                                <th>num</th>
-                                <th>&nbsp;</th>
-                            </thead>
-                            <tbody>
-                                @for ($i = 0; $i < count($ordersDishes); $i++)
-                                    <tr>
-                                        <td class="table-text"><div>{{ $dishes[$i]->name }}</div></td>
-                                        <td class="table-text"><div>{{ $dishes[$i]->price }}</div></td>
-                                        <td class="table-text"><div>{{ $ordersDishes[$i]->amount }}</div></td>
-                                        <td class="table-text"><div>{{ $ordersDishes[$i]->status}}</div></td>
-                                        <!-- Dish Delete Button -->
-                                        @if ($ordersDishes[$i]->status == "NotStart")
-                                        <td>
-                                            <form action="/guest/delete/{{$ordersDishes[$i]->id}}" method="POST">
-                                                {{ csrf_field() }}
-                                                <!-- {{ method_field('DELETE') }} -->
+									<button type="submit" id="modify-dish-{{ $dish->id }}" class="btn btn-danger">
+										<i ></i>修改菜品信息
+									</button>
+								</form>
+							</div>
+							<div class="col-md-3 column">
+								<form action="/dish/delete/{{ $dish->id }}" method="POST">
+									{{ csrf_field() }}
+									<!-- {{ method_field('DELETE') }} -->
 
-                                                <button type="submit" id="delete-dish-{{ $ordersDishes[$i]->id }}" class="btn btn-danger">
-                                                    <i class="fa fa-btn fa-trash"></i>Delete
-                                                </button>
-                                            </form>
-                                        </td>
-                                        @endif
-                                    </tr>
-                                @endfor
-                            </tbody>
-                        </table>
-                        <div class="form-group">
-                        <label class="col-sm-3 control-label">Total: {{ $order->total}}</label>
-                        </div>
-                        @if (($order->status) == "NotConfirm")
-                        <form action="/guest/confirm/{{$order ->id}}" method="POST">
-                            {{ csrf_field() }}
-                            <!-- {{ method_field('DELETE') }} -->
-                            <div class="form-group">
-                            <label for="dish-name" class="col-sm-3 control-label">Remark</label>
-
-                            <div class="col-sm-6">
-                                <input type="text" name="remark" id="remark" class="form-control" placeholder="填写备注">
-                            </div>
-                            </div>
-                            <button type="submit" id="delete-dish-{{ $order->id }}" class="btn btn-danger">
-                                <i class=""></i>Confirm Order
-                            </button>
-                        </form>
-                        @else
-                        <div class="form-group">
-                            <label class="col-sm-3 control-label">Remark: {{ $order->remark}}</label>
-                        </div>
-                        @endif
-                    </div>
-                </div>
-            @endif
+									<button type="submit" id="delete-dish-{{ $dish->id }}" class="btn btn-danger">
+										<i></i>删除菜品
+									</button>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+				@endforeach
+			@endif

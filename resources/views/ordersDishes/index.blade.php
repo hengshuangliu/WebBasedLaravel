@@ -59,7 +59,7 @@
                                                 <form action="/orderDish/{{$ordersDishesTemp[$i]->id}}" method="POST">
                                                 {{ csrf_field() }}
                                                 <button type="submit" id="delete-dish-{{ $ordersDishesTemp[$i]->id }}" class="btn btn-danger">
-                                                    <i class="fa fa-btn fa-trash"></i>制作完成
+                                                    <i></i>制作完成
                                                 </button>
                                                 </form>
                                             </td>
