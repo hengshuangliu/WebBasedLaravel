@@ -20,30 +20,30 @@
                                     <th>&nbsp;</th>
                                 </thead>
                                 <tbody>
+                                <tr>
+                                    <td class="table-text"><div>桌号</div></td>
+                                    <td class="table-text"><div>金额</div></td>
+                                    <td class="table-text"><div>时间</div></td>
+                                    <td class="table-text"><div>备注</div></td>
+                                    <td class="table-text"><div>当前状态</div></td>
+                                </tr>
                                 @foreach ($orders as $order)
                                 @if($order->status === "Enjoying")
-                                        <tr>
-                                            <td class="table-text"><div>桌号</div></td>
-                                            <td class="table-text"><div>金额</div></td>
-                                            <td class="table-text"><div>时间</div></td>
-                                            <td class="table-text"><div>备注</div></td>
-                                            <td class="table-text"><div>当前状态</div></td>
-                                        </tr>
-                                        <tr>
-                                            <td class="table-text"><div>{{ $order->alias }}</div></td>
-                                            <td class="table-text"><div>{{ $order->total }}元</div></td>
-                                            <td class="table-text"><div>{{ $order->updated_at }}</div></td>
-                                            <td class="table-text"><div>{{ $order->remark }}</div></td>
-                                            <!-- Order modify Button -->
-                                            <td>
-                                                <form action="/order/modify/{{$order->id}}" method="POST">
-                                                {{ csrf_field() }}
-                                                <button type="submit" id="delete-dish-{{ $order->id }}" class="btn btn-default">
-                                                    <i class="fa fa-btn fa-trash"></i>已结账
-                                                </button>
-                                                </form>
-                                            </td>
-                                        </tr>
+                                <tr>
+                                    <td class="table-text"><div>{{ $order->alias }}</div></td>
+                                    <td class="table-text"><div>{{ $order->total }}元</div></td>
+                                    <td class="table-text"><div>{{ $order->updated_at }}</div></td>
+                                    <td class="table-text"><div>{{ $order->remark }}</div></td>
+                                    <!-- Order modify Button -->
+                                    <td>
+                                        <form action="/order/modify/{{$order->id}}" method="POST">
+                                        {{ csrf_field() }}
+                                        <button type="submit" id="delete-dish-{{ $order->id }}" class="btn btn-default">
+                                            <i class="fa fa-btn fa-trash"></i>已结账
+                                        </button>
+                                        </form>
+                                    </td>
+                                </tr>
                                 @endif
                                 @endforeach
 
@@ -55,30 +55,20 @@
                                     <th>&nbsp;</th>
                                 </thead>
                                 <tbody>
-
+                                <tr>
+                                    <td class="table-text"><div>桌号</div></td>
+                                    <td class="table-text"><div>金额</div></td>
+                                    <td class="table-text"><div>时间</div></td>
+                                    <td class="table-text"><div>备注</div>
+                                </tr>
                                 @foreach ($orders as $order)
                                 @if($order->status === "Finished")
-                                        <tr>
-                                            <td class="table-text"><div>桌号</div></td>
-                                            <td class="table-text"><div>金额</div></td>
-                                            <td class="table-text"><div>时间</div></td>
-                                            <td class="table-text"><div>备注</div>
-                                        </tr>
-                                        <tr>
-                                            <td class="table-text"><div>{{ $order->alias }}</div></td>
-                                            <td class="table-text"><div>{{ $order->total }}元</div></td>
-                                            <td class="table-text"><div>{{ $order->updated_at }}</div></td>
-                                            <td class="table-text"><div>{{ $order->remark }}</div></td>
-                                            <!-- Order modify Button -->
-<!--                                             <td>
-                                                <form action="/order/modify/{{$order->id}}" method="POST">
-                                                {{ csrf_field() }}
-                                                <button type="submit" id="delete-dish-{{ $order->id }}" class="btn btn-danger">
-                                                    <i class="fa fa-btn fa-trash"></i>Add
-                                                </button>
-                                                </form>
-                                            </td> -->
-                                        </tr>
+                                <tr>
+                                    <td class="table-text"><div>{{ $order->alias }}</div></td>
+                                    <td class="table-text"><div>{{ $order->total }}元</div></td>
+                                    <td class="table-text"><div>{{ $order->updated_at }}</div></td>
+                                    <td class="table-text"><div>{{ $order->remark }}</div></td>
+                                </tr>
                                 @endif
                                 @endforeach
 
@@ -91,30 +81,31 @@
                                     <th>&nbsp;</th>
                                 </thead>
                                 <tbody>
+                                <tr>
+                                    <td class="table-text"><div>桌号</div></td>
+                                    <td class="table-text"><div>金额</div></td>
+                                    <td class="table-text"><div>时间</div></td>
+                                    <td class="table-text"><div>备注</div></td>
+                                    <td class="table-text"><div>当前状态</div></td>
+                                </tr>
                                 @foreach ($orders as $order)
                                 @if($order->status === "NotConfirm")
-                                        <tr>
-                                            <td class="table-text"><div>桌号</div></td>
-                                            <td class="table-text"><div>金额</div></td>
-                                            <td class="table-text"><div>时间</div></td>
-                                            <td class="table-text"><div>备注</div></td>
-                                            <td class="table-text"><div>当前状态</div></td>
-                                        </tr>
-                                        <tr>
-                                            <td class="table-text"><div>{{ $order->alias }}</div></td>
-                                            <td class="table-text"><div>{{ $order->total }}</div></td>
-                                            <td class="table-text"><div>{{ $order->updated_at }}</div></td>
-                                            <td class="table-text"><div>{{ $order->remark }}</div></td>
-                                            <!-- Order modify Button -->
-                                            <td>
-                                                <form action="/order/modify/{{$order->id}}" method="POST">
-                                                {{ csrf_field() }}
-                                                <button type="submit" id="delete-dish-{{ $order->id }}" class="btn btn-default">
-                                                    <i class="fa fa-btn fa-trash"></i>Delete
-                                                </button>
-                                                </form>
-                                            </td>
-                                        </tr>
+
+                                <tr>
+                                    <td class="table-text"><div>{{ $order->alias }}</div></td>
+                                    <td class="table-text"><div>{{ $order->total }}</div></td>
+                                    <td class="table-text"><div>{{ $order->updated_at }}</div></td>
+                                    <td class="table-text"><div>{{ $order->remark }}</div></td>
+                                    <!-- Order modify Button -->
+                                    <td>
+                                        <form action="/order/modify/{{$order->id}}" method="POST">
+                                        {{ csrf_field() }}
+                                        <button type="submit" id="delete-dish-{{ $order->id }}" class="btn btn-default">
+                                            <i class="fa fa-btn fa-trash"></i>Delete
+                                        </button>
+                                        </form>
+                                    </td>
+                                </tr>
                                 @endif
                                 @endforeach
                                 </tbody>
