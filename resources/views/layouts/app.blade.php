@@ -46,10 +46,11 @@
 			</div>
 		</div>
 	</div>
+
 	<div class="row clearfix">
 			<ul class="breadcrumb" >
-				<li style="magin-right:50%">
-					 <a href="/restaurants" style="color:#000"><i class="fa fa-btn fa-heart" style="color:#000"></i >我的餐厅</a>
+				<li style="margin-left:35%;">
+					 <a href="/restaurants" style="color:#000"><i class="fa fa-btn fa-heart" style="color:#000;"></i >我的餐厅</a>
 				</li>
 				@if (Auth::guest())
 					<li><a href="/auth/login" style="color:#000">登陆</a></li>
@@ -65,7 +66,7 @@
 	@yield('content')
 
     <div class="row clearfix" style="background-color:#ff5511;color:#fff">
-			 <div style="color:#C0C0C0;position:fixed;left:10;bottom:0">Copyright © 2017 - 2017 CCNU.elac All Rights Reserved</div>
+			 <div style="color:#C0C0C0;position:fixed;left:30%;bottom:0">Copyright © 2017 - 2017 CCNU.elac All Rights Reserved</div>
 	</div>
 </body>
 </html>
