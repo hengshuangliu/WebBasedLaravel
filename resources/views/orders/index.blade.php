@@ -39,7 +39,7 @@
                                         <form action="/order/modify/{{$order->id}}" method="POST">
                                         {{ csrf_field() }}
                                         <button type="submit" id="delete-dish-{{ $order->id }}" class="btn btn-default">
-                                            <i class="fa fa-btn fa-trash"></i>已结账
+                                            <i></i>已结账
                                         </button>
                                         </form>
                                     </td>
@@ -51,7 +51,7 @@
                             </table>
                             <table class="table table-striped task-table">
                                 <thead>
-                                    <th>历史订单</th>
+                                    <th>已完成订单</th>
                                     <th>&nbsp;</th>
                                 </thead>
                                 <tbody>
@@ -59,7 +59,8 @@
                                     <td class="table-text"><div>桌号</div></td>
                                     <td class="table-text"><div>金额</div></td>
                                     <td class="table-text"><div>时间</div></td>
-                                    <td class="table-text"><div>备注</div>
+                                    <td class="table-text"><div>备注</div></td>
+                                    <td class="table-text"><div>当前状态</div></td>
                                 </tr>
                                 @foreach ($orders as $order)
                                 @if($order->status === "Finished")
@@ -68,6 +69,13 @@
                                     <td class="table-text"><div>{{ $order->total }}元</div></td>
                                     <td class="table-text"><div>{{ $order->updated_at }}</div></td>
                                     <td class="table-text"><div>{{ $order->remark }}</div></td>
+                                     <td>
+                                        <form >
+                                        <button class="btn btn-default">
+                                            <i></i>已完成
+                                        </button>
+                                        </form>
+                                    </td>
                                 </tr>
                                 @endif
                                 @endforeach
@@ -101,7 +109,7 @@
                                         <form action="/order/modify/{{$order->id}}" method="POST">
                                         {{ csrf_field() }}
                                         <button type="submit" id="delete-dish-{{ $order->id }}" class="btn btn-default">
-                                            <i class="fa fa-btn fa-trash"></i>Delete
+                                            <i></i>已确认
                                         </button>
                                         </form>
                                     </td>
