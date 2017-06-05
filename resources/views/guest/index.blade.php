@@ -85,13 +85,13 @@
             <div class="col-md-12 column">
                 <div class="row clearfix">
                     <div class="col-md-3 column">
-                        <label class="col-sm-3 control-label">Total: {{ $order->total}}元</label>
+                        <label class="col-sm-4">总价: {{ $order->total}}元</label>
                     </div>
                     @if (($order->status) == "NotConfirm")
                         <form action="/guest/confirm/{{$order ->id}}" method="POST">
                         {{ csrf_field() }}
                         <!-- {{ method_field('DELETE') }} -->
-                        <div class="col-sm-5">
+                        <div class="col-sm-4">
                         <label for="dish-name"  control-label">备注</label>
                             <input style="margin-bottom:5%" type="text" name="remark" id="remark" class="form-control" placeholder="填写备注">
                         </div>
