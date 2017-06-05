@@ -61,7 +61,11 @@
                         <div>数量：{{ $ordersDishes[$i]->amount }}</div>
                     </div>
                     <div class="col-md-2 column">
-                        <div>制作状态：{{ $ordersDishes[$i]->status}}</div>
+                         @if ($ordersDishes[$i]->status == "NotStart")
+                        <div>状态：未制作</div>
+                        @elseif ($ordersDishes[$i]->status == "Finished")
+                        <div>状态：已完成</div>
+                        @endif
                     </div>
                     <div class="col-md-4 column">
                         <!-- Dish Delete Button -->
