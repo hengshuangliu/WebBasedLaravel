@@ -22,12 +22,18 @@
                                 <tbody>
                                 @foreach ($orders as $order)
                                 @if($order->status === "Enjoying")
-
                                         <tr>
-                                            <td class="table-text"><div>桌号：{{ $order->alias }}</div></td>
-                                            <td class="table-text"><div>金额：{{ $order->total }}元</div></td>
-                                            <td class="table-text"><div>时间：{{ $order->updated_at }}</div></td>
-                                            <td class="table-text"><div>备注：{{ $order->remark }}</div></td>
+                                            <td class="table-text"><div>桌号</div></td>
+                                            <td class="table-text"><div>金额</div></td>
+                                            <td class="table-text"><div>时间</div></td>
+                                            <td class="table-text"><div>备注</div></td>
+                                            <td class="table-text"><div>当前状态</div></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="table-text"><div>{{ $order->alias }}</div></td>
+                                            <td class="table-text"><div>{{ $order->total }}元</div></td>
+                                            <td class="table-text"><div>{{ $order->updated_at }}</div></td>
+                                            <td class="table-text"><div>{{ $order->remark }}</div></td>
                                             <!-- Order modify Button -->
                                             <td>
                                                 <form action="/order/modify/{{$order->id}}" method="POST">
@@ -52,12 +58,17 @@
 
                                 @foreach ($orders as $order)
                                 @if($order->status === "Finished")
-
                                         <tr>
-                                            <td class="table-text"><div>桌号：{{ $order->alias }}</div></td>
-                                            <td class="table-text"><div>金额：{{ $order->total }}</div></td>
-                                            <td class="table-text"><div>时间：{{ $order->updated_at }}</div></td>
-                                            <td class="table-text"><div>备注：{{ $order->remark }}</div></td>
+                                            <td class="table-text"><div>桌号</div></td>
+                                            <td class="table-text"><div>金额</div></td>
+                                            <td class="table-text"><div>时间</div></td>
+                                            <td class="table-text"><div>备注</div>
+                                        </tr>
+                                        <tr>
+                                            <td class="table-text"><div>{{ $order->alias }}</div></td>
+                                            <td class="table-text"><div>{{ $order->total }}元</div></td>
+                                            <td class="table-text"><div>{{ $order->updated_at }}</div></td>
+                                            <td class="table-text"><div>{{ $order->remark }}</div></td>
                                             <!-- Order modify Button -->
 <!--                                             <td>
                                                 <form action="/order/modify/{{$order->id}}" method="POST">
@@ -82,12 +93,18 @@
                                 <tbody>
                                 @foreach ($orders as $order)
                                 @if($order->status === "NotConfirm")
-
                                         <tr>
-                                            <td class="table-text"><div>桌号：{{ $order->alias }}</div></td>
-                                            <td class="table-text"><div>金额：{{ $order->total }}</div></td>
-                                            <td class="table-text"><div>时间：{{ $order->updated_at }}</div></td>
-                                            <td class="table-text"><div>备注：{{ $order->remark }}</div></td>
+                                            <td class="table-text"><div>桌号</div></td>
+                                            <td class="table-text"><div>金额</div></td>
+                                            <td class="table-text"><div>时间</div></td>
+                                            <td class="table-text"><div>备注</div></td>
+                                            <td class="table-text"><div>当前状态</div></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="table-text"><div>{{ $order->alias }}</div></td>
+                                            <td class="table-text"><div>{{ $order->total }}</div></td>
+                                            <td class="table-text"><div>{{ $order->updated_at }}</div></td>
+                                            <td class="table-text"><div>{{ $order->remark }}</div></td>
                                             <!-- Order modify Button -->
                                             <td>
                                                 <form action="/order/modify/{{$order->id}}" method="POST">
