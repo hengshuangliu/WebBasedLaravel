@@ -14,32 +14,38 @@
         <legend  font-size: 200%">
             当前桌号：{{$table->alias}}
         </legend>
-        @foreach ($dishesRestaurant as $dish)
+
         <div class="row clearfix" style="margin-top:5%">
             <div class="col-md-12 column">
                 <div class="row clearfix">
-                    <div class="col-md-4 column">
-                         <div class="div div-default">菜名：{{ $dish->name }}</div>
-                         <div class="div div-default">价格：{{ $dish->price }}元</div>
-                         <div class="div div-default">描述：{{ $dish->description }}</div>
+                @foreach ($dishesRestaurant as $dish)
+                    <div class="col-md-6 column">
+                        <div class="row clearfix">
+                            <div style="margin-bottom:10%;"><img
+                             height="300px" width="60%"  src={{asset('uploads/'.($dish->id).'.jpg')}}  alt="图片加载失败" />
+                             </div>
+                            <div class="col-md-4 column">
+                                <div class="div div-default">{{ $dish->name }}</div>
+                                <div class="div div-default">价格：{{ $dish->price }}元</div>
+                                <div class="div div-default">描述：{{ $dish->description }}</div>
+                            </div>
+                            <div class="col-md-2 column">
+                                <form action="/guest/create/{{$dish->id}}/{{$order ->id}}" method="POST">
+                                    {{ csrf_field() }}
+                                    <!-- {{ method_field('DELETE') }} -->
+                                    <button type="submit" id="delete-dish-{{ $dish->id }}" class="btn btn-default">
+                                        <i class=""></i>点单
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-md-4 column">
-                         <div><img src={{asset('uploads/'.($dish->id).'.jpg')}}  alt="图片加载失败" width="200" height="200" /></div>
-                    </div>
-                    <div class="col-md-4 column">
-                        <form action="/guest/create/{{$dish->id}}/{{$order ->id}}" method="POST">
-                            {{ csrf_field() }}
-                            <!-- {{ method_field('DELETE') }} -->
-                            <button type="submit" id="delete-dish-{{ $dish->id }}" class="btn btn-default">
-                                <i class=""></i>点单
-                            </button>
-                        </form>
-                    </div>
+                    @endforeach
                 </div>
                 <legend></legend>
             </div>
         </div>
-        @endforeach
+
     @endif
 
     @if(count($ordersDishes)>0)
@@ -88,7 +94,7 @@
         <div class="row clearfix" style="margin-top:5%">
             <div class="col-md-12 column">
                 <div class="row clearfix">
-                    <div class="col-md-3 column">
+                    <div class="col-md-4 column">
                         <label class="col-sm-4">总价: {{ $order->total}}元</label>
                     </div>
                     @if (($order->status) == "NotConfirm")
@@ -106,7 +112,7 @@
                         </div>
                         </form>
                          @else
-                        <div style="margin-bottom:5%">
+                        <div style="position:fixed;left:30%;bottom:0">
                             <label  class="col-sm-3 control-label">备注: {{ $order->remark}}</label>
                         </div>
                         @endif
