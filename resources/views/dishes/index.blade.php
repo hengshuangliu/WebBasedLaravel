@@ -15,7 +15,8 @@
 						@foreach ($dishes as $dish)
 							<div class="col-md-6 column">
 							<div class="row clearfix">
-								<div style="margin-bottom:10%;"><img src={{asset('uploads/'.($dish->id).'.jpg')}}  alt="图片加载失败" /></div>
+								<div style="margin-bottom:10%;"><img
+								 height="300px" width="60%"  src={{asset('uploads/'.($dish->id).'.jpg')}}  alt="图片加载失败" /></div>
 								<div class="col-md-4 column">
 									<div class="div div-default">{{ $dish->name }}</div>
 								    <div class="div div-default">价格：{{ $dish->price }}元</div>
