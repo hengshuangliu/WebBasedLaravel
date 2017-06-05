@@ -38,7 +38,7 @@
 						<div class="form-group">
 							<div class="col-sm-offset-3 col-sm-6">
 								<button type="submit" class="btn btn-default">
-									<i class="fa fa-btn fa-plus"></i>添加桌位
+									<i class="fa fa-btn fa-plus"></i>添加
 								</button>
 							</div>
 						</div>
@@ -72,7 +72,7 @@
 												<!-- {{ method_field('DELETE') }} -->
 
 												<button type="submit" id="delete-table-{{ $table->id }}" class="btn btn-default">
-													<i class="fa fa-btn fa-trash"></i>删除桌位
+													<i class="fa fa-btn fa-trash"></i>删除
 												</button>
 											</form>
 										</td>

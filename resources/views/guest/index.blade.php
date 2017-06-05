@@ -55,7 +55,7 @@
                          <div>菜名：{{ $dishes[$i]->name }}</div>
                     </div>
                     <div class="col-md-2 column">
-                         <div>单价：{{ $dishes[$i]->price }}</div>
+                         <div>单价：{{ $dishes[$i]->price }}元</div>
                     </div>
                     <div class="col-md-2 column">
                         <div>数量：{{ $ordersDishes[$i]->amount }}</div>
@@ -85,7 +85,7 @@
             <div class="col-md-12 column">
                 <div class="row clearfix">
                     <div class="col-md-3 column">
-                        <label class="col-sm-3 control-label">Total: {{ $order->total}}</label>
+                        <label class="col-sm-3 control-label">Total: {{ $order->total}}元</label>
                     </div>
                     @if (($order->status) == "NotConfirm")
                         <form action="/guest/confirm/{{$order ->id}}" method="POST">
