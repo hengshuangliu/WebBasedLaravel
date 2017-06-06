@@ -1,9 +1,8 @@
 @extends('layouts.guest')
- <!--               'ordersDishes' => $orderDishesTemp,
+ <!--
                     'restaurant' => $restaurant,
                     'table' => $table,
                     'order' => $order,
-                    'dishes' => $dishes,
                     'dishesRestaurant' => $dishesRestaurant, -->
 @section('content')
     <div class="container">
@@ -35,13 +34,9 @@
                                             <td class="table-img"><div><img src={{asset('uploads/'.($dish->id).'.jpg')}}  alt="图片加载失败" width="150" height="150" /></div></td>
                                             <!-- Dish Add Button -->
                                             <td>
-                                                <form action="/guest/create/{{$dish->id}}/{{$order ->id}}" method="POST">
-                                                {{ csrf_field() }}
-                                                <!-- {{ method_field('DELETE') }} -->
-                                                <button type="submit" id="delete-dish-{{ $dish->id }}" class="btn btn-danger">
+                                                <button onclick="ajaxLoad('/guest/create/{{$dish->id}}/{{$order ->id}}')"  class="btn">
                                                     <i class=""></i>Add
                                                 </button>
-                                                </form>
                                             </td>
                                         </tr>
                                     @endforeach
@@ -52,7 +47,7 @@
             </div>
             @endif
             <!-- Current Dish -->
-            @if(count($ordersDishes)>0)
+
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         Current Dishes for {{$restaurant->name}} in {{$table->alias}}
@@ -63,59 +58,61 @@
                             <thead>
                                 <th>Dish</th>
                                 <th>price</th>
-                                <th>num</th>
+                                <th>amount</th>
+                                @if ($order->status !== "NotConfirm")
+                                <th>status</th>
+                                @endif
                                 <th>&nbsp;</th>
                             </thead>
-                            <tbody>
+                            <tbody id="for-current-dishes">
+                            @if(count($ordersDishes)>0)
                                 @for ($i = 0; $i < count($ordersDishes); $i++)
-                                    <tr>
+                                    <tr id="orderDish-{{$ordersDishes[$i]->id}}">
                                         <td class="table-text"><div>{{ $dishes[$i]->name }}</div></td>
                                         <td class="table-text"><div>{{ $dishes[$i]->price }}</div></td>
-                                        <td class="table-text"><div>{{ $ordersDishes[$i]->amount }}</div></td>
-                                        <td class="table-text"><div>{{ $ordersDishes[$i]->status}}</div></td>
-                                        <!-- Dish Delete Button -->
+                                        <td class="table-text"><div for="amount">{{ $ordersDishes[$i]->amount }}</div></td>
+                                        @if ($order->status !== "NotConfirm")
+                                        <td class="table-text"><div>{{ $ordersDishes[$i]->status }}</div></td>
+                                        @endif
                                         @if ($ordersDishes[$i]->status == "NotStart")
                                         <td>
-                                            <form action="/guest/delete/{{$ordersDishes[$i]->id}}" method="POST">
-                                                {{ csrf_field() }}
-                                                <!-- {{ method_field('DELETE') }} -->
-
-                                                <button type="submit" id="delete-dish-{{ $ordersDishes[$i]->id }}" class="btn btn-danger">
-                                                    <i class="fa fa-btn fa-trash"></i>Delete
-                                                </button>
-                                            </form>
+                                            <button onclick="dishDel('/guest/destroy/orderDish/{{$ordersDishes[$i]->id}}')" class="btn">
+                                                <i class="fa fa-btn fa-trash"></i>Delete
+                                            </button>
                                         </td>
                                         @endif
                                     </tr>
                                 @endfor
+                            @endif
                             </tbody>
                         </table>
+
                         <div class="form-group">
-                        <label class="col-sm-3 control-label">Total: {{ $order->total}}</label>
+                        <label id="total" class="col-sm-3 control-label">Total: {{ $order->total}}</label>
                         </div>
+                        <br />
                         @if (($order->status) == "NotConfirm")
                         <form action="/guest/confirm/{{$order ->id}}" method="POST">
                             {{ csrf_field() }}
                             <!-- {{ method_field('DELETE') }} -->
                             <div class="form-group">
-                            <label for="dish-name" class="col-sm-3 control-label">Remark</label>
-
-                            <div class="col-sm-6">
+                            <label for="dish-name" class="col-sm-2 control-label">Remark</label>
+                            <div class="col-sm-10">
                                 <input type="text" name="remark" id="remark" class="form-control" placeholder="填写备注">
                             </div>
                             </div>
-                            <button type="submit" id="delete-dish-{{ $order->id }}" class="btn btn-danger">
-                                <i class=""></i>Confirm Order
+                            <button type="submit" id="confirm-order-{{ $order->id }}" class="btn btn-success">
+                                <i class=""></i>确认订单
                             </button>
                         </form>
                         @else
                         <div class="form-group">
-                            <label class="col-sm-3 control-label">Remark: {{ $order->remark}}</label>
+                            <label class="col-sm-3 control-label">订单备注: {{ $order->remark}}</label>
                         </div>
                         @endif
+
                     </div>
                 </div>
-            @endif
         </div>
     </div>
 @endsection
