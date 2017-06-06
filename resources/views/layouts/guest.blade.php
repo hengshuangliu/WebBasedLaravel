@@ -27,6 +27,11 @@
         .table-text div {
             padding-top: 6px;
         }
+        .copyRight {
+            color: #828282;
+            text-align: center;
+        }
+
     </style>
 
     <script type="text/javascript">
@@ -109,8 +114,33 @@
 <body>
 
 
-    @yield('content')
+    <div class="container">
+    <div class="row clearfix">
+        <div class="col-md-12 column"  style="background-color:#FF8C69">
+            <div class="page-header">
+                <h3 style="text-align: center;">
+                    智能点餐平台
+                </h3>
+            </div>
+        </div>
 
+
+@yield('content')
+        <div class="col-md-12 column" >
+            <div id="footer">
+                <div class="copyRight">
+                    Copyright ©2010-2017ELAC实验室 版权所有
+                </div>
+            </div>
+
+        </div>
+    </div>
+    </div>
 
 </body>
 </html>
+
+
+<div class="container">
+
+</div>

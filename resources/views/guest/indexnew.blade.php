@@ -8,46 +8,52 @@
     <div class="container">
         <div class="col-sm-offset-2 col-sm-8">
             @if (($order->status) == "NotConfirm")
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    New Order for {{$restaurant->name}} in {{$table->alias}}
+            <div class="col-md-12 column">
+            <nav class="navbar navbar-default navbar-fixed-bottom" role="navigation">
+            <div>
+            <ul class="nav navbar-nav nav-tabs">
+             <li class="active"><a href="#menu">菜单</a></li>
+             <li><a href="#order">已点</a></li>
+            </ul>
+            </div>
+            </nav>
+            </div>
+
+            <div class="col-md-12 column">
+            <a name="menu"></a>
+            <div class="panel panel-default bg-info">
+            <div class="panel-heading">
+                <div class="text-danger">
+                <h4>
+                    {{$restaurant->name}} <small>桌名：{{$table->alias}}</small>
+                </h4>
                 </div>
 
+                </div>
                 <div class="panel-body">
                     <!-- Display Validation Errors -->
                     @include('common.errors')
-                        <div class="panel-body">
-                            <table class="table table-striped task-table">
-                                <thead>
-                                    <th>Menu</th>
-                                    <th>price</th>
-                                    <th>describe</th>
-                                    <th>pic</th>
-                                    <th>&nbsp;</th>
-                                </thead>
-                                <tbody>
-                                    @foreach ($dishesRestaurant as $dish)
-                                        <tr>
-                                            <td class="table-text"><div>{{ $dish->name }}</div></td>
-                                            <td class="table-text"><div>{{ $dish->price }}</div></td>
-                                            <td class="table-text"><div>{{ $dish->description }}</div></td>
-                                            <td class="table-img"><div><img src={{asset('uploads/'.($dish->id).'.jpg')}}  alt="图片加载失败" width="150" height="150" /></div></td>
-                                            <!-- Dish Add Button -->
-                                            <td>
-                                                <button onclick="ajaxLoad('/guest/create/{{$dish->id}}/{{$order ->id}}')"  class="btn">
-                                                    <i class=""></i>Add
-                                                </button>
-                                            </td>
-                                        </tr>
-                                    @endforeach
-                                </tbody>
-                            </table>
+                        <div name="menu" class="panel-body">
+                        @foreach ($dishesRestaurant as $dish)
+                        <div class="col-sm-6 col-md-3"  style="padding: 20px 20px 20px 20px;">
+                              <div>
+                                 <img src={{asset('uploads/'.($dish->id).'.jpg')}} alt="图片加载失败" width="150" height="150" class="thumbnail" >
+                              </div>
+                              <div class="caption">
+                                 <h5>{{ $dish->name }}</h5> <h4>售价：{{ $dish->price }}</h4>
+                                 <p>{{ $dish->description }}</p>
+                                 <p>
+                                    <button onclick="ajaxLoad('/guest/create/{{$dish->id}}/{{$order ->id}}')"  class="btn"><i class=""></i>Add</button>
+                                 </p>
+                              </div>
+                           </div>
+                        @endforeach
                         </div>
                 </div>
             </div>
             @endif
             <!-- Current Dish -->
-
+                <a name="order"></a>
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         Current Dishes for {{$restaurant->name}} in {{$table->alias}}
@@ -90,7 +96,6 @@
                         <div class="form-group">
                         <label id="total" class="col-sm-3 control-label">Total: {{ $order->total}}</label>
                         </div>
-                        <br />
                         @if (($order->status) == "NotConfirm")
                         <form action="/guest/confirm/{{$order ->id}}" method="POST">
                             {{ csrf_field() }}
@@ -111,6 +116,7 @@
                         </div>
                         @endif
 
+                    </div>
                     </div>
                 </div>
         </div>
