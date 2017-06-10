@@ -59,7 +59,18 @@ Route::get('/ordersDishes/{restaurant}', 'OrderDishController@index');
 Route::post('/orderDish/{orderDish}', 'OrderDishController@modify');
 
 // Guest 路由
-Route::get('/guest/{restaurant}/{table}', 'GuestController@index');
-Route::post('/guest/create/{dish}/{order}', 'GuestController@create');
-Route::post('/guest/delete/{orderDish}', 'GuestController@delete');
-Route::post('/guest/confirm/{order}', 'GuestController@confirm');
+// Route::get('/guest/{restaurant}/{table}', 'GuestController@index');
+// Route::post('/guest/create/{dish}/{order}', 'GuestController@create');
+// Route::post('/guest/delete/{orderDish}', 'GuestController@delete');
+// Route::post('/guest/confirm/{order}', 'GuestController@confirm');
+
+Route::get('/test2', function () {
+    $arr = ['1'=>'hello','2'=>'world',];
+    return $arr;
+});
+
+// Guest new 路由
+Route::get('/guest/{restaurant}/{table}', 'NewGuestController@index');
+Route::get('/guest/create/{dish}/{order}', 'NewGuestController@create');
+Route::get('/guest/destroy/orderDish/{orderDish}', 'NewGuestController@destroy');
+Route::post('/guest/confirm/{order}', 'NewGuestController@confirm');

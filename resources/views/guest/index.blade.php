@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.guest')
  <!--               'ordersDishes' => $orderDishesTemp,
                     'restaurant' => $restaurant,
                     'table' => $table,

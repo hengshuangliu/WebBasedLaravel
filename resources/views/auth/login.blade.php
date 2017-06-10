@@ -14,7 +14,7 @@
                         {{ csrf_field() }}
 
                         <div class="promotion-banner">
-                         <img src="//s0.meituan.net/bs/file/?f&#x3D;fe-sso-fs:build/page/static/banner/www.jpg" width="540" height="400"/>
+                         <img src="//s0.meituan.net/bs/file/?f&#x3D;fe-sso-fs:build/page/static/banner/www.jpg" class="img-responsive" width="540" height="400"/>
                         </div>
                         <!-- E-Mail Address -->
                         <div class="form-group">
