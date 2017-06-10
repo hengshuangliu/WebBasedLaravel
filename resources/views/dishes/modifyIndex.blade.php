@@ -39,7 +39,7 @@
                             <label for="dish-price" class="col-sm-3 control-label">单价</label>
 
                             <div class="col-sm-6">
-                                <input type="text" name="price" id="dish-price" class="form-control" value="{{$dish->price}}">
+                                <input type="text" name="price" id="dish-price" class="form-control" value="{{$dish->price}}元">
                             </div>
                         </div>
                         <div class="form-group">
