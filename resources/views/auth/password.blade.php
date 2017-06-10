@@ -16,7 +16,7 @@
 
                             <div class="form-field form-field--icon">
                             <i class="icon icon-user"></i>
-                                <input type="text" name="email" placeholder="e-mail" class="form-control" >
+                                <input type="text" name="email" placeholder="邮箱" class="form-control" >
                             </div>
                         </div>
 
