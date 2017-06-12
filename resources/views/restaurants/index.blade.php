@@ -12,10 +12,13 @@
 				<div class="row clearfix" style="margin-top:5%">
 					<div class="col-md-12 column">
 						<div class="row clearfix">
-							<div class="col-md-4 column">
+							<div class="col-md-3 column">
 								 <div class="div div-default">{{ $restaurant->name }}</div>
 							</div>
-							<div class="col-md-4 column">
+							<div class="col-md-3 column">
+								 <div class="div div-default">ID：{{ $restaurant->id }}</div>
+							</div>
+							<div class="col-md-3 column">
 								<div class="btn-group">
 									 <button class="btn btn-default">餐厅信息</button> <button data-toggle="dropdown" class="btn btn-default dropdown-toggle"><span class="caret"></span></button>
 									<ul class="dropdown-menu">
@@ -34,7 +37,7 @@
 									</ul>
 								</div>
 							</div>
-							<div class="col-md-4 column">
+							<div class="col-md-3 column">
 								<form action="/restaurant/{{ $restaurant->id }}" method="POST">
 									{{ csrf_field() }}
 									{{ method_field('DELETE') }}
