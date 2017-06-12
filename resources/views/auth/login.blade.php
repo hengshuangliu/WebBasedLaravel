@@ -6,7 +6,7 @@
         <div class="row clearfix">
             <div class="col-md-12 column">
                 <div class="promotion-banner">
-                     <img src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=139232850,596941672&amp;fm=23&amp;gp=0.jpg" width=100% height="40%"/>
+                     <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1497263424341&di=2db7eef29ea9f33ebb9553c2e8bd327f&imgtype=0&src=http%3A%2F%2Fyou.yaochufa.com%2Fuploads%2Fview%2Fozt%2F25adav0k11hvd.jpg" width=100% height=300px/>
                 </div>
         </div>
 
