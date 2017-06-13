@@ -5,9 +5,9 @@
                     'order' => $order,
                     'dishesRestaurant' => $dishesRestaurant, -->
 @section('content')
-    <<style type="text/css" media="screen">
+    <style type="text/css" media="screen">
         li{float: left;list-style:none;}
-    </style>>
+    </style>
     <div class="container">
         <div>
             @if (($order->status) == "NotConfirm")
