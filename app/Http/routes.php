@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('/auth/login');;
 })->middleware('guest');
 
 // 认证路由...
