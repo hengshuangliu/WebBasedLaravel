@@ -28,15 +28,20 @@
                     @include('common.errors')
                     @foreach ($dishesRestaurant as $dish)
                     <div class="row clearfix">
-                    <div class="col-xs-6 column" display:inline>
+                    <div class="col-xs-4 column" display:inline>
                         <img src={{asset('uploads/'.($dish->id).'.jpg')}} alt="图片加载失败" width="100" height="100" class="thumbnail" >
                     </div>
-                    <div class="col-xs-6 column" display:inline>
+                    <div class="col-xs-4 column" display:inline>
                         <div >{{ $dish->name }}</div >
                         <div >售价：{{ $dish->price }}</div >
                         <div >{{ $dish->description }}</div >
+                    </div>
+                    <div class="col-xs-4 column" display:inline>
                          <p>
-                            <button onclick="ajaxLoad('/guest/create/{{$dish->id}}/{{$order ->id}}')"  class="btn"><i></i>添加</button>
+                            <button onclick="ajaxLoad('/guest/create/{{$dish->id}}/{{$order ->id}}')"  ><i></i>-</button>
+                            3
+                            <button onclick="ajaxLoad('/guest/create/{{$dish->id}}/{{$order ->id}}')"  ><i></i>+</button>
+
                          </p>
                     </div>
                     </div>
