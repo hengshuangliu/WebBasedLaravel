@@ -5,7 +5,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>智能点餐网</title>
+	<title>点点网</title>
 
 	<link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,700" rel="stylesheet" type="text/css">
 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -27,16 +27,20 @@
 		.table-text div {
 			padding-top: 6px;
 		}
+		.copyRight {
+            color: #828282;
+            text-align: center;
+        }
 	</style>
 
 </head>
 
 <body>
-	<div class="row clearfix" style="background-color:#ff5511;color:#fff;">
+	<div class="row clearfix" style="background-color:#00B2EE;color:#fff;">
 		<div class="col-md-12 column">
 			<div class="page-header" >
 				<h3 style="text-align: center;">
-					智能点餐平台
+					点点网
 				</h3>
 			</div>
 		</div>
@@ -44,7 +48,7 @@
 
 	<div class="row clearfix">
 			<ul class="breadcrumb" >
-				<li style="margin-left:35%;">
+				<li style="margin-left:22%;">
 					 <a href="/restaurants" style="color:#000"><i class="fa fa-btn fa-heart" style="color:#000;"></i >我的餐厅</a>
 				</li>
 				@if (Auth::guest())
@@ -57,10 +61,17 @@
 			</ul>
 	</div>
 
-
+<div class="container">
 	@yield('content')
-    <div class="row clearfix" style="background-color:#ff5511;color:#fff">
-			 <div style="color:#C0C0C0;position:fixed;left:30%;bottom:0">Copyright © 2017 - 2017 CCNU.elac All Rights Reserved</div>
-	</div>
+
+        <div class="col-md-12 column" >
+            <div id="footer">
+                <div class="copyRight">
+                    Copyright ©2010-2017ELAC 实验室 版权所有
+                </div>
+            </div>
+
+        </div>
+    </div>
 </body>
 </html>

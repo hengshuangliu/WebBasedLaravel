@@ -49,7 +49,7 @@
                 var txt4 = "<td class=\"table-text\"><div for=\'amount\'>";
                 var txt5 = "</div></td>";
                 var txt6 = "<td><button onclick=\"dishDel(\'/guest/destroy/orderDish/";
-                var txt7 = "\')\" class=\'btn\'><i class=\'fa fa-btn fa-trash\'></i>Delete</button></td></tr>";
+                var txt7 = "\')\" class=\'btn\'><i class=\'fa fa-btn fa-trash\'></i>删除</button></td></tr>";
                 tbody.append(txt0 + data["orderDish"] + txt1 + data['name'] + txt2 + data['orderDish'] + txt3 + txt4 + data["amount"] + txt5 + txt6 + data["orderDish"] + txt7);
                 tbody.append($('#orderDish-'+data['orderDish']));
             }
@@ -112,29 +112,25 @@
 </head>
 
 <body>
-
-
-    <div class="container">
-    <div class="row clearfix">
-        <div class="col-md-12 column"  style="background-color:#FF8C69">
-            <div class="page-header">
+        <div class="row clearfix" style="background-color:#00B2EE;color:#fff;">
+        <div class="col-md-12 column">
+            <div class="page-header" >
                 <h3 style="text-align: center;">
-                    智能点餐平台
+                    点点网
                 </h3>
             </div>
         </div>
-
-
+    </div>
+<div class="container">
 @yield('content')
         <div class="col-md-12 column" >
             <div id="footer">
                 <div class="copyRight">
-                    Copyright ©2010-2017ELAC实验室 版权所有
+                    Copyright ©2010-2017ELAC 实验室 版权所有
                 </div>
             </div>
 
         </div>
-    </div>
     </div>
 
 </body>

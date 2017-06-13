@@ -3,7 +3,7 @@
 @section('content')
 	<div class="container">
 	<legend>{{ $restaurant->name }}</legend>
-		<div class="col-sm-offset-2 col-sm-8">
+		<div>
 			<div class="panel panel-default">
 				<div class="panel-heading">
 					添加桌位
@@ -63,8 +63,8 @@
 								@foreach ($tables as $table)
 									<tr>
 										<td class="table-text"><div>{{ $table->alias }}</div></td>
-										<td class="table-text"><div>编号{{ $table->id }}</div></td>
-
+										<td class="table-text"><div>编号：{{ $table->id }}</div></td>
+										<td class="table-text"><div>描述：{{ $table->description }}</div></td>
 										<!-- Table Delete Button -->
 										<td>
 											<form action="/table/delete/{{ $table->id }}" method="POST">

@@ -5,20 +5,20 @@
 		<div class="row-fluid">
 		<!-- Current Restaurant -->
 			@if (count($restaurants) > 0)
-				<legend  style="margin-top:10%;font-size: 200%">
+				<legend  style="font-size: 200%">
 					我的餐厅
 				</legend>
 				@foreach ($restaurants as $restaurant)
 				<div class="row clearfix" style="margin-top:5%">
-					<div class="col-md-12 column">
+					<div class="col-xs-12 column">
 						<div class="row clearfix">
-							<div class="col-md-3 column">
+							<div class="col-xs-3 column">
 								 <div class="div div-default">{{ $restaurant->name }}</div>
 							</div>
-							<div class="col-md-3 column">
+							<div class="col-xs-3 column">
 								 <div class="div div-default">ID：{{ $restaurant->id }}</div>
 							</div>
-							<div class="col-md-3 column">
+							<div class="col-xs-3 column">
 								<div class="btn-group">
 									 <button class="btn btn-default">餐厅信息</button> <button data-toggle="dropdown" class="btn btn-default dropdown-toggle"><span class="caret"></span></button>
 									<ul class="dropdown-menu">
@@ -37,7 +37,7 @@
 									</ul>
 								</div>
 							</div>
-							<div class="col-md-3 column">
+							<div class="col-xs-3 column">
 								<form action="/restaurant/{{ $restaurant->id }}" method="POST">
 									{{ csrf_field() }}
 									{{ method_field('DELETE') }}

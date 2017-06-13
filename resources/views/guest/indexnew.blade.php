@@ -5,15 +5,18 @@
                     'order' => $order,
                     'dishesRestaurant' => $dishesRestaurant, -->
 @section('content')
+    <<style type="text/css" media="screen">
+        li{float: left;list-style:none;}
+    </style>>
     <div class="container">
         <div>
             @if (($order->status) == "NotConfirm")
             <div class="col-xs-12 column">
             <nav class="navbar navbar-default navbar-fixed-bottom" role="navigation">
             <div>
-            <ul class="nav navbar-nav nav-tabs">
-             <li class="active"><a href="#menu">菜单</a></li>
-             <li><a href="#order">已点</a></li>
+            <ul >
+             <li style="margin-left:25%"><a href="#menu">菜单</a></li>
+             <li style="margin-left:25%"><a href="#order">已点</a></li>
             </ul>
             </div>
             </nav>
@@ -21,6 +24,7 @@
         </div>
 
             <div>
+            <a name="menu"></a>
                 <legend  style="font-size: 200%">
                     {{$restaurant->name}} <small>桌名：{{$table->alias}}</small>
                 </legend>
@@ -38,10 +42,7 @@
                     </div>
                     <div class="col-xs-4 column" display:inline>
                          <p>
-                            <button onclick="ajaxLoad('/guest/create/{{$dish->id}}/{{$order ->id}}')"  ><i></i>-</button>
-                            3
-                            <button onclick="ajaxLoad('/guest/create/{{$dish->id}}/{{$order ->id}}')"  ><i></i>+</button>
-
+                            <button onclick="ajaxLoad('/guest/create/{{$dish->id}}/{{$order ->id}}')"  ><i></i>添加</button>
                          </p>
                     </div>
                     </div>

@@ -11,37 +11,37 @@
 				</legend>
 				<div class="row clearfix">
 					<div class="col-md-12 column">
-						<div class="row clearfix">
+
 						@foreach ($dishes as $dish)
-							<div class="col-md-6 column">
-							<div class="row clearfix">
+						<div class="row clearfix">
+							<div class="col-md-4 column">
 								<div style="margin-bottom:10%;"><img
-								 height="300px" width="60%"  src={{asset('uploads/'.($dish->id).'.jpg')}}  alt="图片加载失败" /></div>
-								<div class="col-md-4 column">
-									<div class="div div-default">{{ $dish->name }}</div>
-								    <div class="div div-default">价格：{{ $dish->price }}元</div>
-									<div class="div div-default">描述：{{ $dish->description }}</div>
-								</div>
-								<div class="col-md-2 column">
-									<form action="/dish/modify/index/{{ $dish->id }}" method="POST">
-										{{ csrf_field() }}
-										<!-- {{ method_field('DELETE') }} -->
-
-										<button type="submit" id="modify-dish-{{ $dish->id }}" class="btn btn-default">
-											<i ></i>修改
-										</button>
-									</form>
-									<form action="/dish/delete/{{ $dish->id }}" method="POST">
-										{{ csrf_field() }}
-										<!-- {{ method_field('DELETE') }} -->
-
-										<button type="submit" id="delete-dish-{{ $dish->id }}" class="btn btn-default">
-											<i class="fa fa-btn fa-trash"></i>删除
-										</button>
-									</form>
-								</div>
-								</div>
+								 src={{asset('uploads/'.($dish->id).'.jpg')}}  alt="图片加载失败" width="100" height="100" class="thumbnail"/></div>
 							</div>
+							<div class="col-md-4 column">
+								<div class="div div-default">{{ $dish->name }}</div>
+							    <div class="div div-default">价格：{{ $dish->price }}元</div>
+								<div class="div div-default">描述：{{ $dish->description }}</div>
+							</div>
+							<div class="col-md-4 column">
+								<form action="/dish/modify/index/{{ $dish->id }}" method="POST">
+									{{ csrf_field() }}
+									<!-- {{ method_field('DELETE') }} -->
+
+									<button type="submit" id="modify-dish-{{ $dish->id }}" class="btn btn-default">
+										<i class="fa fa-btn"></i>修改
+									</button>
+								</form>
+								<form action="/dish/delete/{{ $dish->id }}" method="POST">
+									{{ csrf_field() }}
+									<!-- {{ method_field('DELETE') }} -->
+
+									<button type="submit" id="delete-dish-{{ $dish->id }}" class="btn btn-default">
+										<i class="fa fa-btn"></i>删除
+									</button>
+								</form>
+							</div>
+						</div>
 						@endforeach
 						</div>
 					</div>
