@@ -22,7 +22,7 @@ class DishController extends Controller
         $this->middleware('auth');
 
         $this->dishes = $dishes;
-        $this->destinationPath = public_path()."\uploads";
+        $this->destinationPath = public_path()."/uploads";
 
     }
 
