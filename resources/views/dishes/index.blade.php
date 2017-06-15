@@ -2,8 +2,30 @@
 
 @section('content')
 	<div class="container">
-		<div class="row-fluid">
 
+		<!-- Add Restaurant -->
+		<div class="span6">
+			<!-- Display Validation Errors -->
+				@include('common.errors')
+			<form action="/dish/store/{{$restaurant -> id}}" method="POST" enctype="multipart/form-data">
+				{{ csrf_field() }}
+				<fieldset>
+					 <legend style="margin-top:5%;">添加菜品({{ $restaurant->name }})</legend>
+					 <label>菜名</label>
+					 <input type="text" name="name" id="dish-name" class="form-control" value="{{ old('dish') }}">
+					 <label>描述</label>
+					 <input type="text" name="description" id="dish-description" class="form-control" value="{{ old('description') }}">
+					 <label>单价</label>
+					 <input type="text" name="price" id="dish-price" class="form-control" value="{{ old('price') }}">
+					 <label>上传图片</label>
+					 <input type="file" name="file" id="dish-file" class="form-control">
+					 <button type="submit" class="btn btn-default" style="margin-top:5%">添加菜品</button>
+				</fieldset>
+			</form>
+		</div>
+
+
+		<div class="row-fluid">
 			<!-- Current Dish -->
 			@if (count($dishes) > 0)
 				<legend  style="font-size: 200%">
@@ -48,27 +70,6 @@
 				</div>
 				<legend style="margin-top: 5%;margin-bottom: 5%;"></legend>
 			@endif
-			<!-- Add Restaurant -->
-			<div class="span6">
-				<!-- Display Validation Errors -->
-					@include('common.errors')
-				<form action="/dish/store/{{$restaurant -> id}}" method="POST" enctype="multipart/form-data">
-					{{ csrf_field() }}
-					<fieldset>
-						 <legend style="margin-top:5%;">添加菜品({{ $restaurant->name }})</legend>
-						 <label>菜名</label>
-						 <input type="text" name="name" id="dish-name" class="form-control" value="{{ old('dish') }}">
-						 <label>描述</label>
-						 <input type="text" name="description" id="dish-description" class="form-control" value="{{ old('description') }}">
-						 <label>单价</label>
-						 <input type="text" name="price" id="dish-price" class="form-control" value="{{ old('price') }}">
-						 <label>上传图片</label>
-						 <input type="file" name="file" id="dish-file" class="form-control">
-						 <button type="submit" class="btn btn-default" style="margin-top:5%">添加菜品</button>
-					</fieldset>
-				</form>
-			</div>
 
 		</div>
-	</div>
 @endsection
