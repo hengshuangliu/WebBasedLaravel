@@ -50,7 +50,7 @@
                 var txt5 = "</div></td>";
                 var txt6 = "<td><button onclick=\"dishDel(\'/guest/destroy/orderDish/";
                 var txt7 = "\')\" class=\'btn\'><i class=\'fa fa-btn fa-trash\'></i>删除</button></td></tr>";
-                tbody.append(txt0 + data["orderDish"] + txt1 + data['name'] + txt2 + data['orderDish'] + txt3 + txt4 + data["amount"] + txt5 + txt6 + data["orderDish"] + txt7);
+                tbody.append(txt0 + data["orderDish"] + txt1 + data['name'] + txt2 + data['price'] + txt3 + txt4 + data["amount"] + txt5 + txt6 + data["orderDish"] + txt7);
                 tbody.append($('#orderDish-'+data['orderDish']));
             }
             else
